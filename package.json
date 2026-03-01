@@ -1,0 +1,16 @@
+{
+  "name": "arr-dead-queue-remover",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "axios": "^1.13.6",
+    "fast-xml-parser": "^5.4.1"
+  }
+}
