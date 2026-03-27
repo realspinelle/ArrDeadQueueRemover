@@ -162,7 +162,7 @@ async function main() {
     console.log("Cleanup complete.");
     removedStalled = [];
 }
-setTimeout(() => {
+setInterval(() => {
     main().catch(console.error);
 }, 15 * 60 * 1000);
 main().catch(console.error);
