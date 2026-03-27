@@ -135,7 +135,7 @@ async function processQueue(app: {
     
     console.log(`[${name}] Found ${data.records.length} in queue`);
     for (const item of data.records as MediaQueueItem[]) {
-        const stalled = (item.status == "unknown" || item.status == "queued" || item.status == "paused") && minutesSince(item.added) >= STALL_MINUTES;
+        const stalled = (item.status == "unknown" || (item.status == "warning" && item.sizeleft > 0) || item.status == "queued" || item.status == "paused") && minutesSince(item.added) >= STALL_MINUTES;
 
         if (stalled && !removedStalled.includes(item.title)) {
             removedStalled.push(item.title);
